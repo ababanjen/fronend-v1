@@ -12,15 +12,9 @@ import {
 
 const Header = ({history:{push}, location:{pathname}}) => {
     const [open, setIsOpen] = useState(false)
-    const handleToggle = () => {
-        setIsOpen(!open)
-    }
-    const handleChangePage = (location) => {
-        location && push(`${location}`)
-    }
-    const setActive = (path) => {
-        return pathname === path ? 'active' : ''
-    }
+    const handleToggle = () => setIsOpen(!open)
+    const handleChangePage = (location) => location && push(`${location}`)
+    const setActive = (path) => pathname === path ? 'active' : ''
     return (
     <Container className="header-container" fluid={true}>
         <div className="logo link" onClick={()=>push('/')} >
